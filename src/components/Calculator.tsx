@@ -14,7 +14,9 @@ import {
 export default function Calculator() {
   const [num1, setNum1] = useState<string>("");
   const [num2, setNum2] = useState<string>("");
-  const [result, setResult] = useState<string>("Enter numbers and click an operation");
+  const [result, setResult] = useState<string>(
+    "Enter numbers and click an operation"
+  );
   const [isNegative, setIsNegative] = useState<boolean>(false);
 
   // display result func with red as neg styling
@@ -23,7 +25,6 @@ export default function Calculator() {
     setResult(String(resultValue));
 
     // check if result is negative for styling
-
     if (typeof resultValue === "number" && resultValue < 0) {
       setIsNegative(true);
     } else {
