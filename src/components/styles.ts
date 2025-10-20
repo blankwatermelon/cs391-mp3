@@ -67,6 +67,11 @@ export const StyledFooter = styled.footer`
   text-align: left;
   padding-left: 4%;
   font-size: calc(10px + 0.3vw);
+
+  @media screen and (max-width: 750px) {
+    text-align: center;
+    padding: 2% 0;
+  }
 `;
 
 // nav styling
@@ -281,25 +286,21 @@ export const CalcInput = styled.input`
 `;
 
 export const CalcOutputH3 = styled.h3`
-  h3 {
-    color: ${theme.trueBlue};
-    font-size: calc(16px + 0.3vw);
-    margin-bottom: 2%;
-    text-indent: 0;
-  }
+  color: ${theme.trueBlue};
+  font-size: calc(16px + 0.3vw);
+  margin-bottom: 2%;
+  text-indent: 0;
 `;
 export const CalcOutputP = styled.p`
-  p {
-    font-size: calc(18px + 0.4vw);
-    color: ${theme.richBlack};
-    margin: 0;
-    padding: 2%;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-  }
+  font-size: calc(18px + 0.4vw);
+  color: ${theme.richBlack};
+  margin: 0;
+  padding: 2%;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
 `;
 
 export const CalcButtons = styled.div`

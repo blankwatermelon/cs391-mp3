@@ -11,7 +11,7 @@ export default function Home() {
       <title> Home | Resume</title>
 
       <StyledMainH1>About Me</StyledMainH1>
-      <StyledImg src="public/IMG_3230.jpg" alt="Picture of my cat" />
+      <StyledImg src="/IMG_3230.jpg" alt="Picture of my cat" />
       <StyledMainP>
         Welcome to my page! Here you will find an overview of my background,
         including my experiences, education, achievements, and projects that
