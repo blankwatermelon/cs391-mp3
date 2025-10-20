@@ -91,23 +91,23 @@ export default function Calculator() {
     <CalcDiv>
       <CalcDisplayH3>Simple Calculator</CalcDisplayH3>
       <CalcInputs>
-          <CalcLabel htmlFor="num1">First Number:</CalcLabel>
-          <CalcInput
-            type="number"
-            id="num1"
-            value={num1}
-            onChange={(e) => setNum1(e.target.value)}
-            placeholder="Enter first number"
-          />
-        
-          <CalcLabel htmlFor="num2">Second Number:</CalcLabel>
-          <CalcInput
-            type="number"
-            id="num2"
-            value={num2}
-            onChange={(e) => setNum2(e.target.value)}
-            placeholder="Enter second number"
-          />
+        <CalcLabel htmlFor="num1">First Number:</CalcLabel>
+        <CalcInput
+          type="number"
+          id="num1"
+          value={num1}
+          onChange={(e) => setNum1(e.target.value)}
+          placeholder="Enter first number"
+        />
+
+        <CalcLabel htmlFor="num2">Second Number:</CalcLabel>
+        <CalcInput
+          type="number"
+          id="num2"
+          value={num2}
+          onChange={(e) => setNum2(e.target.value)}
+          placeholder="Enter second number"
+        />
       </CalcInputs>
 
       <CalcButtons>
@@ -119,9 +119,10 @@ export default function Calculator() {
         <CalcButton onClick={doClear}>Clear</CalcButton>
       </CalcButtons>
 
-      
-        <CalcOutputH3>Result:</CalcOutputH3>
-        <CalcOutputP style={{ color: isNegative ? "red" : "" }}>{result}</CalcOutputP>
+      <CalcOutputH3>Result:</CalcOutputH3>
+      <CalcOutputP style={{ color: isNegative ? "red" : "" }}>
+        {result}
+      </CalcOutputP>
     </CalcDiv>
   );
 }

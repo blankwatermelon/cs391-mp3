@@ -1,6 +1,5 @@
-import { Link } from 'react-router';
-import styled, { createGlobalStyle } from 'styled-components';
-
+import { Link } from "react-router";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -11,54 +10,54 @@ export const GlobalStyles = createGlobalStyle`
 
 // Color palette theme
 export const theme = {
-  cordovan: '#984447ff',
-  uranianBlue: '#add9f4ff',
-  trueBlue: '#476c9bff',
-  blueMunsell: '#468c98ff',
-  richBlack: '#101419ff',
+  cordovan: "#984447ff",
+  uranianBlue: "#add9f4ff",
+  trueBlue: "#476c9bff",
+  blueMunsell: "#468c98ff",
+  richBlack: "#101419ff",
 };
 
 // page wrapper
 export const PageWrapper = styled.div`
-    width: 80vw;
-    margin: 0 auto;
-    text-align: center;
-    background-color: ${theme.uranianBlue};
-    color: ${theme.richBlack};
-    font-family: 'Roboto', sans-serif;
-    font-size: calc(14px + 0.3vw);
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+  background-color: ${theme.uranianBlue};
+  color: ${theme.richBlack};
+  font-family: "Roboto", sans-serif;
+  font-size: calc(14px + 0.3vw);
 
-    @media screen and (max-width: 750px) {
-        width: 100%;
-    }
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
 `;
 
 // container
 export const Container = styled.div`
-    display: flex;
-    flex-direction: row;
-    width: 100%;    
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 
-    @media screen and (max-width: 750px) {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+  @media screen and (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 // header
 export const StyledHeader = styled.header`
-    background-color: ${theme.trueBlue};
-    color: ${theme.uranianBlue};
-    text-align: left;
-    padding-left: 4%;
-    padding-top: 1%;
-    font-size: calc(20px + 0.3vw);
+  background-color: ${theme.trueBlue};
+  color: ${theme.uranianBlue};
+  text-align: left;
+  padding-left: 4%;
+  padding-top: 1%;
+  font-size: calc(20px + 0.3vw);
 
-    @media screen and (max-width: 750px) {
+  @media screen and (max-width: 750px) {
     text-align: center;
     padding-left: 0;
-    }
+  }
 `;
 
 // footer
@@ -117,12 +116,11 @@ export const StyledNavLi = styled.li`
 `;
 
 export const StyledNavLink = styled(Link)`
-    text-decoration: none;
-    color: ${theme.richBlack};
+  text-decoration: none;
+  color: ${theme.richBlack};
 `;
 
-
-// main styling 
+// main styling
 export const StyledMain = styled.main`
   min-height: 100vh;
   width: 70%;
@@ -187,31 +185,31 @@ export const StyledMainP = styled.p`
 `;
 
 export const CourseWorkList = styled.ul`
-    list-style: none;
-    text-align: left;
-    padding-bottom: 2%;
+  list-style: none;
+  text-align: left;
+  padding-bottom: 2%;
 `;
 
 export const StyledH2 = styled.h2`
-    margin-left: 1%;
-    font-size: calc(26px + 0.3vw);
-    margin-bottom: 2%;
-    margin-top: 3%;
-    text-align: left;
-    color: ${theme.trueBlue};
+  margin-left: 1%;
+  font-size: calc(26px + 0.3vw);
+  margin-bottom: 2%;
+  margin-top: 3%;
+  text-align: left;
+  color: ${theme.trueBlue};
 `;
 
 export const StyledH3 = styled.h3`
-    margin-left: 5%;
-    font-size: calc(20px + 0.3vw);
-    margin-bottom: 1%;
-    margin-top: 2%;
-    text-align: left;
-    color: ${theme.cordovan};
+  margin-left: 5%;
+  font-size: calc(20px + 0.3vw);
+  margin-bottom: 1%;
+  margin-top: 2%;
+  text-align: left;
+  color: ${theme.cordovan};
 `;
 
 export const ExpList = styled.ul`
-    margin-left: 5%;
+  margin-left: 5%;
 `;
 
 export const StyledEduP = styled.p`
@@ -226,7 +224,7 @@ export const StyledEduP = styled.p`
   }
 `;
 
-// calc styling 
+// calc styling
 
 // Calculator styles
 export const CalcDiv = styled.div`
@@ -237,7 +235,7 @@ export const CalcDiv = styled.div`
   background-color: ${theme.uranianBlue};
   border: 3px solid ${theme.cordovan};
   border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 
   @media screen and (max-width: 750px) {
     margin: 2% auto;
@@ -276,7 +274,7 @@ export const CalcInput = styled.input`
   border: 2px solid ${theme.blueMunsell};
   border-radius: 5px;
   font-size: calc(16px + 0.3vw);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: white;
   color: ${theme.richBlack};
   max-width: 100%;
