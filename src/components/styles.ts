@@ -18,6 +18,7 @@ export const theme = {
   richBlack: '#101419ff',
 };
 
+// page wrapper
 export const PageWrapper = styled.div`
     width: 80vw;
     margin: 0 auto;
@@ -32,6 +33,7 @@ export const PageWrapper = styled.div`
     }
 `;
 
+// container
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
@@ -44,6 +46,7 @@ export const Container = styled.div`
     }
 `;
 
+// header
 export const StyledHeader = styled.header`
     background-color: ${theme.trueBlue};
     color: ${theme.uranianBlue};
@@ -58,6 +61,7 @@ export const StyledHeader = styled.header`
     }
 `;
 
+// footer
 export const StyledFooter = styled.footer`
   background-color: ${theme.trueBlue};
   color: ${theme.uranianBlue};
@@ -66,6 +70,7 @@ export const StyledFooter = styled.footer`
   font-size: calc(10px + 0.3vw);
 `;
 
+// nav styling
 export const StyledNav = styled.nav`
   background-color: ${theme.blueMunsell};
   width: 30%;
@@ -116,6 +121,8 @@ export const StyledNavLink = styled(Link)`
     color: ${theme.richBlack};
 `;
 
+
+// main styling 
 export const StyledMain = styled.main`
   min-height: 100vh;
   width: 70%;
@@ -216,5 +223,114 @@ export const StyledEduP = styled.p`
   @media screen and (max-width: 750px) {
     font-size: calc(12px + 0.5vw);
     padding: 0 2%;
+  }
+`;
+
+// calc styling 
+
+// Calculator styles
+export const CalcDiv = styled.div`
+  width: 100%;
+  max-width: 600px;
+  margin: 4% auto;
+  padding: 3%;
+  background-color: ${theme.uranianBlue};
+  border: 3px solid ${theme.cordovan};
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+
+  @media screen and (max-width: 750px) {
+    margin: 2% auto;
+    padding: 4%;
+    max-width: 95%;
+  }
+`;
+
+export const CalcDisplayH3 = styled.h3`
+  text-align: center;
+  color: ${theme.trueBlue};
+  font-size: calc(20px + 0.4vw);
+  margin-bottom: 3%;
+`;
+
+export const CalcInputs = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  margin-bottom: 4%;
+
+  @media screen and (max-width: 750px) {
+    gap: 3%;
+  }
+`;
+
+export const CalcLabel = styled.label`
+  font-weight: 500;
+  color: ${theme.richBlack};
+  font-size: calc(14px + 0.3vw);
+  margin-bottom: 1%;
+`;
+
+export const CalcInput = styled.input`
+  padding: 2% 3%;
+  border: 2px solid ${theme.blueMunsell};
+  border-radius: 5px;
+  font-size: calc(16px + 0.3vw);
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: ${theme.richBlack};
+  max-width: 100%;
+`;
+
+export const CalcOutputH3 = styled.h3`
+  h3 {
+    color: ${theme.trueBlue};
+    font-size: calc(16px + 0.3vw);
+    margin-bottom: 2%;
+    text-indent: 0;
+  }
+`;
+export const CalcOutputP = styled.p`
+  p {
+    font-size: calc(18px + 0.4vw);
+    color: ${theme.richBlack};
+    margin: 0;
+    padding: 2%;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const CalcButtons = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  justify-content: center;
+  margin-bottom: 4%;
+
+  @media screen and (max-width: 750px) {
+    gap: 3%;
+  }
+`;
+
+export const CalcButton = styled.button`
+  min-width: 60px;
+  padding: 3% 2%;
+  border: 2px solid ${theme.trueBlue};
+  border-radius: 8px;
+  background-color: ${theme.blueMunsell};
+  color: white;
+  font-size: calc(16px + 0.3vw);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 `;
