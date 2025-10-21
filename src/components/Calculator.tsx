@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   CalcDiv,
   CalcDisplayH3,
@@ -10,83 +9,42 @@ import {
   CalcOutputH3,
   CalcOutputP,
 } from "./styles";
+import { useCalculator } from "./useCalculator";
 
 export default function Calculator() {
-  const [num1, setNum1] = useState<string>("");
-  const [num2, setNum2] = useState<string>("");
-  const [result, setResult] = useState<string>(
-    "Enter numbers and click an operation"
-  );
-  const [isNegative, setIsNegative] = useState<boolean>(false);
+  const {
+    num1,
+    num2,
+    result,
+    isNegative,
+    setNum1,
+    setNum2,
+    performOperation,
+    clear,
+  } = useCalculator();
 
-  // display result func with red as neg styling
-  const displayResult = (resultValue: number | string) => {
-    // result can be num or string
-    setResult(String(resultValue));
+  //  try to reduce redunfancy of displayResult using custom hook 
+  const doAdd = () => performOperation((n1, n2) => n1 + n2);
 
-    // check if result is negative for styling
-    if (typeof resultValue === "number" && resultValue < 0) {
-      setIsNegative(true);
-    } else {
-      setIsNegative(false);
-    }
-  };
+  const doSub = () => performOperation((n1, n2) => n1 - n2);
 
-  const doAdd = () => {
-    const result = Number(num1) + Number(num2);
-    displayResult(result);
-  };
+  const doMulti = () => performOperation((n1, n2) => n1 * n2);
 
-  const doSub = () => {
-    const result = Number(num1) - Number(num2);
-    displayResult(result);
-  };
+  const doDiv = () =>
+    performOperation((n1, n2) => {
+      if (n2 === 0) return "Div by zero";
+      return n1 / n2;
+    });
 
-  const doMulti = () => {
-    const result = Number(num1) * Number(num2);
-    displayResult(result);
-  };
-
-  const doDiv = () => {
-    const n1 = Number(num1);
-    const n2 = Number(num2);
-
-    if (n2 === 0) {
-      setResult("div by 0");
-      setIsNegative(false);
-      return;
-    }
-
-    const result = n1 / n2;
-    displayResult(result);
-  };
-
-  const doPower = () => {
-    const n1 = Number(num1);
-    const n2 = Number(num2);
-
-    if (n2 === 0) {
-      displayResult(1);
-      return;
-    }
-
-    let result = 1;
-    for (let i = 1; i < Math.abs(n2); i++) {
-      result *= n1;
-    }
-
-    if (n2 < 0) {
-      result = 1 / result;
-    }
-
-    displayResult(result);
-  };
-
-  const doClear = () => {
-    setNum1("");
-    setNum2("");
-    setResult("Enter numbers and click an operation");
-  };
+  const doPower = () =>
+    performOperation((n1, n2) => {
+      if (n2 === 0) return 1;
+      let result = 1;
+      for (let i = 0; i < Math.abs(n2); i++) {
+        result *= n1;
+      }
+      return n2 < 0 ? 1 / result : result;
+    });
 
   return (
     <CalcDiv>
@@ -110,14 +68,13 @@ export default function Calculator() {
           placeholder="Enter second number"
         />
       </CalcInputs>
-
       <CalcButtons>
         <CalcButton onClick={doAdd}>+</CalcButton>
         <CalcButton onClick={doSub}>-</CalcButton>
         <CalcButton onClick={doMulti}>×</CalcButton>
         <CalcButton onClick={doDiv}>÷</CalcButton>
-        <CalcButton onClick={doPower}>^</CalcButton>
-        <CalcButton onClick={doClear}>Clear</CalcButton>
+        <CalcButton onClick={doPower}>*</CalcButton>
+        <CalcButton onClick={clear}>Clear</CalcButton>
       </CalcButtons>
 
       <CalcOutputH3>Result:</CalcOutputH3>
